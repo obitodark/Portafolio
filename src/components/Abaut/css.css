@@ -1,0 +1,83 @@
+/* 
+.box {
+    width: 60vmin;
+    height: 60vmin;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    position: relative;
+
+    /* &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+      border: 1px dashed rgba(255,255,255,0.4);
+      transform: scale(1.42);
+    } */
+/*} */
+
+.spin-container {
+    width: 100%;
+    height: 100%;
+    animation: spin 8s linear infinite;
+    position: relative;
+}
+
+.shape {
+    transition: border-radius 1s ease-out;
+    border-radius: 23% 77% 61% 39% / 69% 42% 58% 31%;
+    animation: morph 10s ease-in-out infinite both alternate;
+    position: relative;
+    overflow: hidden;
+    /* z-index: 5; */
+    background: #e7fe55;
+    border: 1px solid black;
+}
+
+.bd {
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    left: -21%;
+    /* position: relative; */
+    top: -21%;
+    background-image: linear-gradient(45deg, #e7fe55, #ea90ff);
+    background: #e7fe55;
+    background-size: 100%;
+    background-position: center center;
+    display: flex;
+    color: #003;
+    font-size: 5vw;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    animation: spin 10s linear infinite reverse;
+    opacity: 1;
+    /* z-index: 2; */
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 64% 36% 80% 20% / 22% 44% 56% 78%;
+    }
+    50% {
+        border-radius: 71% 29% 31% 69% / 87% 63% 37% 13%;
+    }
+    70% {
+        border-radius: 25% 75% 74% 26% / 74% 63% 37% 26%;
+    }
+
+    100% {
+        border-radius: 59% 41% 66% 34% / 28% 63% 37% 72%;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
