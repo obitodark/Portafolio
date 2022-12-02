@@ -29,7 +29,7 @@ const Presentation = () => {
                                 I´am Willians Ccallo
                             </Typography>
 
-                            <StylesComponents.textEffectWrite size={30} weight={600}>
+                            <StylesComponents.textEffectWrite size={25} weight={400}>
                                 Programador Full Stack
                             </StylesComponents.textEffectWrite>
                             <Grid item mt={5}>

@@ -16,7 +16,8 @@ import {
     ListItemButton,
     ListItemText,
     Drawer,
-    IconButton
+    IconButton,
+    Link
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useContext } from 'react';
@@ -30,8 +31,7 @@ export default function MenuLateral({ children, props, window }) {
     const theme = useTheme();
     const colorMode = useContext(ColorModeContext);
     let trigger = null;
-
-    const navItems = ['About', 'Projects', 'Contact '];
+    const navItems = ['Home', 'Skill', 'Projects', 'About'];
     function ElevationScroll(props) {
         const { children, window } = props;
         trigger = useScrollTrigger({
@@ -59,14 +59,16 @@ export default function MenuLateral({ children, props, window }) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                Rick & Morty
+                Willians Ccallo
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                            <Link href={`#${item}`} sx={{ textDecoration: 'none' }}>
+                                {item}
+                            </Link>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -74,6 +76,12 @@ export default function MenuLateral({ children, props, window }) {
         </Box>
     );
     const container = window !== undefined ? () => window().document.body : undefined;
+
+    const handlemove = (e) => {
+        e.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
     return (
         <React.Fragment>
             <CssBaseline />
@@ -88,7 +96,6 @@ export default function MenuLateral({ children, props, window }) {
                 >
                     <Toolbar>
                         <IconButton
-                            color="inherit"
                             aria-label="open drawer"
                             edge="start"
                             onClick={handleDrawerToggle}
@@ -96,33 +103,30 @@ export default function MenuLateral({ children, props, window }) {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Grid container justifyContent="space-between">
-                            <Grid item>
-                                <Typography
-                                    gutterBottom
-                                    variant="h6"
-                                    component="div"
-                                    color={theme.palette.mode === 'dark' ? 'white' : 'black'}
-                                >
+                        <Grid container justifyContent="space-between" alignContent="center">
+                            <Grid item alignContent="center">
+                                <Typography gutterBottom variant="h6" color={theme.palette.mode === 'dark' ? 'white' : 'black'} mt={1}>
                                     Willians Ccallo
                                 </Typography>
                             </Grid>
                             <Grid iten sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                {navItems.map((item) => (
+                                {navItems.map((item, index) => (
                                     <Button
-                                        key={item}
+                                        key={index}
                                         sx={{ color: `${theme.palette.mode === 'dark' ? 'white' : 'black'}`, textTransform: 'capitalize' }}
                                     >
-                                        {item}
+                                        <Link onClick={handlemove} href={`#${item}`} sx={{ textDecoration: 'none' }}>
+                                            {item}
+                                        </Link>
                                     </Button>
                                 ))}
-                                <Button sx={{ color: `${theme.palette.mode === 'dark' ? 'white' : 'black'}`, textTransform: 'capitalize' }}>
-                                    {theme.palette.mode} mode
-                                    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
-                                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                                    </IconButton>
-                                </Button>
                             </Grid>
+                            <Button sx={{ color: `${theme.palette.mode === 'dark' ? 'white' : 'black'}`, textTransform: 'capitalize' }}>
+                                {theme.palette.mode} mode
+                                <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
+                                    {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                                </IconButton>
+                            </Button>
                         </Grid>
                         <Box component="nav">
                             <Drawer

@@ -16,10 +16,10 @@ function Home() {
     return (
         <div>
             <Grid container maxWidth={'100%'}>
-                <Grid item xs={12} mb={12}>
+                <Grid item xs={12} mb={12} id="Home">
                     <ViewPresentation />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} id="Skill">
                     <ViewSkill />
                 </Grid>
                 <Grid item xs={12}>
@@ -52,10 +52,10 @@ function Home() {
                         </Suspense>
                     </Canvas>
                 </Grid> */}
-                <Grid item xs={12} mt={3}>
+                <Grid item xs={12} mt={3} id="Projects">
                     <ViewProjects />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} id="About">
                     {/* <ViewAbout /> */}
                 </Grid>
             </Grid>
