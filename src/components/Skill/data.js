@@ -6,7 +6,7 @@ const frond = [
     },
     {
         name: 'Css',
-        image: 'https://cdn.icon-icons.com/icons2/1826/PNG/512/4202020css3htmllogosocialsocialmedia-115668_115633.png',
+        image: 'https://www.ujudebug.com/wp-content/uploads/2022/07/css-new-logo.jpg',
         text: 'Styles'
     },
     {

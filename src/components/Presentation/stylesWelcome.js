@@ -18,16 +18,16 @@ const DegradedTitleh4 = styled.h2`
     -moz-text-fill-color: transparent;
 `;
 
-const DegradedBorder = styled.div`
-    .gradient-border {
-        animation: gradient 5s linear infinite;
-        background: linear-gradient(100deg, var(--violet) 25%, var(--turquoise) 50%, var(--violet) 75%);
-        background-repeat: repeat;
-        border-radius: 2rem;
-        padding: 2rem;
-        margin: 5rem;
-    }
-`;
+// const DegradedBorder = styled.div`
+//     .gradient-border {
+//         animation: gradient 5s linear infinite;
+//         background: linear-gradient(100deg, #005ff0 25%, var(--turquoise) 50%, #005ff0 75%);
+//         background-repeat: repeat;
+//         border-radius: 2rem;
+//         padding: 2rem;
+//         margin: 5rem;
+//     }
+// `;
 const titles = styled(DegradedTitleh4)`
     font-size: 70px;
 `;
@@ -62,7 +62,7 @@ overflow: hidden;
 const StylesComponents = {
     DegradedTitleh4,
     titles,
-    DegradedBorder,
+
     textEffectWrite
 };
 

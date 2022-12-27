@@ -19,17 +19,17 @@ const About = () => {
                 <Grid container mt={10} p={2}>
                     <Grid item xs={12}>
                         {' '}
-                        <Typography variant="h4" sx={{ background: '#40404' }}>
+                        <Typography variant="h4" my={3} sx={{ background: '#40404' }}>
                             ABOUT
                         </Typography>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={12} lg={6} sx={{ order: { xs: 1, sm: 1, lg: 0 } }}>
                         <Typography variant="h5" my={2}>
                             Willians Ccallo
                         </Typography>
-                        <Typography variant="body1">
+                        <Typography variant="body1" display={'block'}>
                             Soy engrasado de Tecnico Computacion e Informatica y certicado en desarrollo web full stack en TECSUP ,cuento
-                            con conocimietos solidos en HTML,CSS,JAVASCRIPTS,REACT,BOOSTTRAP,MATERIAL UI
+                            con conocimietos solidos en Html,Css,Javascript,React,Bootstrap,Material UI
                         </Typography>
                         <br />
                         <Typography variant="body1" display={'block'}>
@@ -38,9 +38,25 @@ const About = () => {
                             nemo.
                         </Typography>
                     </Grid>
-                    <Grid item container xs={6} sx={{ position: 'relative' }}>
-                        <Grid iten mx={5} mt={-5}>
-                            {[10, 20, 50, 90, 130, 170, 210].map((box, index) => (
+                    <Grid item container xs={12} sm={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <Grid item sx={{ background: '#005FF0', borderRadius: '23% 77% 61% 39% / 69% 42% 58% 31% ' }} p={3}>
+                            <img width={350} src={user} alt="" />
+                        </Grid>
+                        {/* <Grid iten mx={5} mt={-5} sx={{ position: 'relative' }}>
+                            <div className="point-degraded-aboutd"></div> */}
+                        {/* <h1 className="border-text">progrador full stack</h1>
+
+                            <h1 className="text">progrador full stack</h1>
+                            <h1 className="border-text text2">progrador full stack</h1>
+
+                            <h1 className="text text2">progrador full stack</h1>
+                            <h1 className="border-text text3">progrador full stack</h1>
+
+                            <h1 className="text text3">progrador full stack</h1> */}
+                        {/* <h1 className="border-text text4">progrador full stack</h1>
+
+                            <h1 className="text text4">progrador full stack</h1> */}
+                        {/* {[10, 20, 50, 90, 130, 170, 210].map((box, index) => (
                                 <Box
                                     key={index}
                                     sx={{
@@ -53,17 +69,8 @@ const About = () => {
                                         // border: '1px solid white'
                                     }}
                                 ></Box>
-                            ))}
-
-                            <Box sx={{ position: 'absolute', zIndex: 11 }}>
-                                <img width={350} src={user} alt="" />
-                            </Box>
-                            <Box className="shape">
-                                <Box className="bd">
-                                    {/* <Box sx={{ position: 'absolute', background: '#0F0F0F', width: '100%', height: '10px' }}></Box> */}
-                                </Box>
-                            </Box>
-                        </Grid>
+                            ))} */}
+                        {/* </Grid> */}
                     </Grid>
                 </Grid>
             </Container>

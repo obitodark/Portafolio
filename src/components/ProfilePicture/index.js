@@ -1,15 +1,29 @@
+import { styled, useTheme } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
 import user from '../../Images/user.png';
 import './profile.css';
 
 const ProflePicture = () => {
+    const theme = useTheme();
     const stylesshape = {
-        width: { xs: '300px', sm: '380px' },
-        height: { xs: '300px', sm: '380px' }
+        width: { xs: '300px', sm: '370px' },
+        height: { xs: '300px', sm: '370px' }
     };
     return (
         <Grid container sx={{ position: 'relative', overflow: 'hidden' }}>
-            <Grid item xs={12} container>
+            <Grid
+                item
+                xs={12}
+                container
+                sx={{
+                    // border: 'solid blue 1px',
+                    width: { xs: '320px', sm: '420px' },
+                    height: { xs: '320px', sm: '420px' },
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
+            >
                 {[20, 50, 90, 130, 170, 210, 250, 290].map((box, index) => (
                     <Grid
                         item
@@ -29,11 +43,14 @@ const ProflePicture = () => {
                     ></Grid>
                 ))}
 
-                <Grid item className="shape" sx={stylesshape}>
-                    <Box sx={{ position: 'absolute', zIndex: 2, width: { xs: '250px', sm: '350px' } }}>
-                        <img width={'100%'} src={user} alt="" />
-                    </Box>
-                </Grid>
+                <Grid
+                    item
+                    className="shape "
+                    sx={{ ...stylesshape, background: `${theme.palette.mode === 'dark' ? '#E7FE55' : '#00EDB2'}` }}
+                ></Grid>
+                <Box sx={{ position: 'absolute', width: { xs: '250px', sm: '350px', zIndex: 5 } }}>
+                    <img width={'100%'} src={user} alt="" />
+                </Box>
             </Grid>
         </Grid>
     );

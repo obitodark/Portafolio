@@ -1,11 +1,7 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Grid } from '@mui/material';
-import { OrbitControls } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
-import { ViewPresentation, ViewProjects, ViewAbout, ViewSkill, ViewStackCarrusuel, ViewParticles } from '../../components';
-import BoxThree from '../../components/BoxThree';
-import AnimateSphere from '../../components/AnimateSphere/indes';
-import ModelJbl from '../../components/ModelJbl/Jbl';
+
+import { ViewPresentation, ViewProjects, ViewAbout, ViewSkill } from '../../components';
 
 // import ModelJbl from '../../components/ModelJbl';
 
@@ -56,7 +52,7 @@ function Home() {
                     <ViewProjects />
                 </Grid>
                 <Grid item xs={12} id="About">
-                    {/* <ViewAbout /> */}
+                    <ViewAbout />
                 </Grid>
             </Grid>
         </div>

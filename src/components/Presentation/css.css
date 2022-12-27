@@ -43,6 +43,23 @@
     animation: morph 5s ease-in-out infinite both alternate;
     filter: blur(50px);
 }
+
+.point-degraded-about {
+    position: absolute;
+    z-index: 1;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: none;
+    /* background-color: #3333ff; */
+    top: 10%;
+    left: 10%;
+    box-shadow: 0 0 0 10px #911fef, -200px 0 200px #ef1f4b;
+    /* box-shadow: -180px -180px 100px #ebfc05, -50px -300px 250px #2765e0; */
+
+    filter: blur(50px);
+}
+
 @keyframes morph {
     0% {
         border-radius: 64% 36% 80% 20% / 22% 44% 56% 78%;

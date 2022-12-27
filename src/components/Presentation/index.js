@@ -13,7 +13,7 @@ const Presentation = () => {
     // });
 
     const stylesText = {
-        color: theme.palette.mode === 'dark' ? '#E7FE55' : '#654EC4'
+        color: theme.palette.mode === 'dark' ? '#E7FE55' : '#005FF0'
     };
     return (
         <Container maxWidth="xl">
@@ -21,7 +21,13 @@ const Presentation = () => {
                 <Grid item container xs={12} sm={12} lg={6}>
                     <Grid item container xs={12} flexDirection="row" className="container" justifyContent="center">
                         <Grid item>
-                            <Typography variant="h2" fontWeight={900} m={0} p={0}>
+                            <Typography
+                                variant="h1"
+                                fontWeight={900}
+                                m={0}
+                                p={0}
+                                // sx={{ color: 'transparent', WebkitTextStroke: '2px black' }}
+                            >
                                 Hello.
                             </Typography>
 
@@ -29,18 +35,23 @@ const Presentation = () => {
                                 I´am Willians Ccallo
                             </Typography>
 
-                            <StylesComponents.textEffectWrite size={25} weight={400}>
+                            <StylesComponents.textEffectWrite size={25} weight={600}>
                                 Programador Full Stack
                             </StylesComponents.textEffectWrite>
+
                             <Grid item mt={5}>
-                                <Button variant="contained" size="large">
+                                <Button
+                                    variant="contained"
+                                    size="large"
+                                    sx={{ borderRadius: '10px', textTransform: 'capitalize', padding: '10px 20px' }}
+                                >
                                     Learn more
                                 </Button>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item container xs={12} sm={12} lg={6} mt={{ xs: 5, sm: 1 }} justifyContent="center">
+                <Grid item container xs={12} sm={12} lg={6} p={5} mt={{ xs: 5, sm: 1 }} justifyContent="center">
                     <Grid item>
                         <ProflePicture />
                     </Grid>

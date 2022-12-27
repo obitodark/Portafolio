@@ -75,13 +75,13 @@ export default function MenuLateral({ children, props, window }) {
             </List>
         </Box>
     );
-    const container = window !== undefined ? () => window().document.body : undefined;
+    // const container = window !== undefined ? () => window().document.body : undefined;
 
-    const handlemove = (e) => {
-        e.scrollIntoView({
-            behavior: 'smooth'
-        });
-    };
+    // const handlemove = (e) => {
+    //     e.scrollIntoView({
+    //         behavior: 'smooth'
+    //     });
+    // };
     return (
         <React.Fragment>
             <CssBaseline />
@@ -115,14 +115,14 @@ export default function MenuLateral({ children, props, window }) {
                                         key={index}
                                         sx={{ color: `${theme.palette.mode === 'dark' ? 'white' : 'black'}`, textTransform: 'capitalize' }}
                                     >
-                                        <Link onClick={handlemove} href={`#${item}`} sx={{ textDecoration: 'none' }}>
+                                        <Link href={`#${item}`} sx={{ textDecoration: 'none' }}>
                                             {item}
                                         </Link>
                                     </Button>
                                 ))}
                             </Grid>
                             <Button sx={{ color: `${theme.palette.mode === 'dark' ? 'white' : 'black'}`, textTransform: 'capitalize' }}>
-                                {theme.palette.mode} mode
+                                {theme.palette.mode}
                                 <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
                                     {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
@@ -130,7 +130,6 @@ export default function MenuLateral({ children, props, window }) {
                         </Grid>
                         <Box component="nav">
                             <Drawer
-                                container={container}
                                 variant="temporary"
                                 open={mobileOpen}
                                 onClose={handleDrawerToggle}
