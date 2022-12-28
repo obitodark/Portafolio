@@ -1,5 +1,6 @@
 import { Grid, Typography, Container, Box } from '@mui/material';
 import user from '../../Images/user.png';
+import Spline from '@splinetool/react-spline';
 import './css.css';
 const About = () => {
     const box = {
@@ -39,39 +40,11 @@ const About = () => {
                         </Typography>
                     </Grid>
                     <Grid item container xs={12} sm={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Grid item sx={{ background: '#005FF0', borderRadius: '23% 77% 61% 39% / 69% 42% 58% 31% ' }} p={3}>
-                            <img width={350} src={user} alt="" />
+                        <Grid item /*sx={{ background: '#005FF0', borderRadius: '23% 77% 61% 39% / 69% 42% 58% 31% ' }}*/ p={3}>
+                            {/* <img width={350} src={user} alt="" /> */}
                         </Grid>
-                        {/* <Grid iten mx={5} mt={-5} sx={{ position: 'relative' }}>
-                            <div className="point-degraded-aboutd"></div> */}
-                        {/* <h1 className="border-text">progrador full stack</h1>
-
-                            <h1 className="text">progrador full stack</h1>
-                            <h1 className="border-text text2">progrador full stack</h1>
-
-                            <h1 className="text text2">progrador full stack</h1>
-                            <h1 className="border-text text3">progrador full stack</h1>
-
-                            <h1 className="text text3">progrador full stack</h1> */}
-                        {/* <h1 className="border-text text4">progrador full stack</h1>
-
-                            <h1 className="text text4">progrador full stack</h1> */}
-                        {/* {[10, 20, 50, 90, 130, 170, 210].map((box, index) => (
-                                <Box
-                                    key={index}
-                                    sx={{
-                                        position: 'absolute',
-                                        background: '#0F0F0F',
-                                        width: '400px',
-                                        height: `${5 * index}px`,
-                                        top: `${box + 5 * index}px`,
-                                        zIndex: 10
-                                        // border: '1px solid white'
-                                    }}
-                                ></Box>
-                            ))} */}
-                        {/* </Grid> */}
                     </Grid>
+                    <Spline scene="https://prod.spline.design/isi0uXRsKYhbiiS5/scene.splinecode" />
                 </Grid>
             </Container>
         </div>

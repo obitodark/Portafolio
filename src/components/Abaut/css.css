@@ -41,15 +41,15 @@
     animation: morph 15s ease-in-out infinite both alternate, spin 10s linear infinite reverse;
 }
 
-.bd {
+/* .bd {
     background-image: linear-gradient(45deg, #005ff0, #005ff0);
 
     background-position: center center;
 
     animation: spin 15s linear infinite reverse;
     opacity: 1;
-    /* z-index: 2; */
-}
+  
+} */
 
 @keyframes morph {
     0% {

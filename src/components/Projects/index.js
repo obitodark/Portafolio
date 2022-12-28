@@ -1,6 +1,6 @@
 import { Container, Grid, Typography, Button, Divider } from '@mui/material';
 import ProjectsCart from '../ProjectsCart.js';
-import anime from 'animejs/lib/anime.es.js';
+
 import dataProject from './data.js';
 
 const Projects = () => {
