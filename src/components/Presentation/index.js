@@ -1,7 +1,7 @@
 import { styled, useTheme } from '@mui/material/styles';
 import { Container, Grid, Typography, Button, Box } from '@mui/material';
 import StylesComponents from './stylesWelcome';
-import image from '../../Images/programer1.svg';
+
 import './css.css';
 import ProflePicture from '../ProfilePicture';
 const Presentation = () => {

@@ -1,6 +1,6 @@
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
-import user from '../../Images/user.png';
+import user from '../../Images/avatar.png';
 import './profile.css';
 
 const ProflePicture = () => {
