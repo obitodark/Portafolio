@@ -1,5 +1,7 @@
 import { Card, CardMedia, Typography, CardContent, CardActions, Button, useTheme, Divider } from '@mui/material';
 import './stylesCart.css';
+import LinkIcon from '@mui/icons-material/Link';
+import GitHubIcon from '@mui/icons-material/GitHub';
 const ProjectsCart = ({ project }) => {
     const theme = useTheme();
     const styles_card = {
@@ -32,7 +34,10 @@ const ProjectsCart = ({ project }) => {
                 </CardContent>
                 <CardActions>
                     <Button size="small" onClick={() => handleView(project.link)}>
-                        View
+                        <LinkIcon />
+                    </Button>
+                    <Button size="small" onClick={() => handleView(project.link)}>
+                        <GitHubIcon />
                     </Button>
                 </CardActions>
             </Card>

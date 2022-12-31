@@ -30,12 +30,12 @@ const ProflePicture = () => {
                         key={index}
                         sx={{
                             position: 'absolute',
-                            background: '#0F0F0F',
+                            background: `${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.3)' : '#0F0F0F'}`,
                             width: { xs: '320px', sm: '420px' },
                             left: { xs: '0px', sm: '0px' },
                             height: { xs: `${4 * index}px`, sm: `${5 * index}px` },
                             top: { xs: `${box - 5 * index}px`, sm: `${box + 5 * index}px` },
-                            backdropFilter: 'blur(15px)',
+                            backdropFilter: 'blur(20px)',
 
                             boxShadow: '5px 0px 27px -5px rgba(0, 0, 0, 0.3) ',
                             zIndex: 1

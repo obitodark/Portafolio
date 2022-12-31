@@ -21,7 +21,7 @@ const Projects = () => {
                 </Grid>
                 <Grid item xs={12} container spacing={3} justifyContent="center">
                     {dataProject.projects.map((project, index) => (
-                        <Grid item xs={12} sm={6} lg={3}>
+                        <Grid item xs={12} sm={6} lg={4} xl={3}>
                             <ProjectsCart key={index} project={project} />
                         </Grid>
                     ))}

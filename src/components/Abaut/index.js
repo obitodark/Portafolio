@@ -28,7 +28,7 @@ const About = () => {
                         <Typography variant="h5" my={2}>
                             Willians Ccallo
                         </Typography>
-                        <Typography variant="body1" display={'block'}>
+                        <Typography variant="body1" display={'block'} sx={{ wordWrap: 'break-word' }}>
                             Soy engrasado de Tecnico Computacion e Informatica y certicado en desarrollo web full stack en TECSUP ,cuento
                             con conocimietos solidos en Html,Css,Javascript,React,Bootstrap,Material UI
                         </Typography>
