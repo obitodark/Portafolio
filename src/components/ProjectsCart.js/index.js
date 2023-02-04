@@ -1,4 +1,4 @@
-import { Card, CardMedia, Typography, CardContent, Box, CardActions, Button, useTheme, Divider } from '@mui/material';
+import { Card, CardMedia, Typography, CardContent, Box, CardActions, Button, useTheme, Grid } from '@mui/material';
 import './stylesCart.css';
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -23,31 +23,37 @@ const ProjectsCart = ({ project }) => {
     return (
         <div>
             <Card sx={{ ...styles_card, display: 'flex', justifyContent: 'space-between', borderRadius: '10px' }} className="box-item">
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flex: '1 0 auto' }}>
-                        <Typography gutterBottom variant="subtitle" component="div" sx={{ fontWeight: 500 }}>
-                            {project.name}
-                        </Typography>
-                        <Typography variant="subtitle1" color="text.secondary" component="div">
-                            {project.description}
-                        </Typography>
-                    </CardContent>
-                    <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
-                    <CardActions>
-                        <Button size="small" onClick={() => handleView(project.url_projects)}>
-                            <LinkIcon />
-                        </Button>
-                        <Button size="small" onClick={() => handleView(project.url_github)}>
-                            <GitHubIcon />
-                        </Button>
-                    </CardActions>
-                </Box>
-                <CardMedia
-                    component="img"
-                    sx={{ width: 151, borderRadius: '10px', overflow: 'hidden' }}
-                    image={project.images_projects[0].images !== undefined ? project.images_projects[0].images.url_image : ''}
-                    alt="Live from space album cover"
-                />
+                <Grid container sx={{ height: '200px' }}>
+                    <Grid item xs={6}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <CardContent sx={{ flex: '1 0 auto' }}>
+                                <Typography gutterBottom variant="subtitle" component="div" sx={{ fontWeight: 500 }}>
+                                    {project.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary" component="div" className="block-ellipsis">
+                                    {project.description}
+                                </Typography>
+                            </CardContent>
+
+                            <CardActions>
+                                <Button size="small" onClick={() => handleView(project.url_projects)}>
+                                    <LinkIcon />
+                                </Button>
+                                <Button size="small" onClick={() => handleView(project.url_github)}>
+                                    <GitHubIcon />
+                                </Button>
+                            </CardActions>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <CardMedia
+                            component="img"
+                            sx={{ width: '100%', height: '100%', borderRadius: '10px', overflow: 'hidden' }}
+                            image={project.images_projects[0].images !== undefined ? project.images_projects[0].images.url_image : ''}
+                            alt="Live from space album cover"
+                        />
+                    </Grid>
+                </Grid>
             </Card>
             {/* <Card sx={{ ...styles_card, maxWidth: 345, borderRadius: '10px' }} className="box-item">
                 <CardMedia
