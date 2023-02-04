@@ -14,20 +14,24 @@ import {
     List,
     ListItem,
     ListItemButton,
-    ListItemText,
     Drawer,
     IconButton,
     Link
 } from '@mui/material';
+import { useContext, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import React, { useContext } from 'react';
+import React from 'react';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+
 import PropTypes from 'prop-types';
 import ColorModeContext from '../../context/ColorModeContext';
 
+import { useNavigate } from 'react-router-dom';
+
 const drawerWidth = 240;
 export default function MenuLateral({ children, props, window }) {
+    const history = useNavigate();
     const theme = useTheme();
     const colorMode = useContext(ColorModeContext);
     let trigger = null;
@@ -55,6 +59,10 @@ export default function MenuLateral({ children, props, window }) {
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
+    };
+    const handleLogin = () => {
+        // const { setOpenModal } = useContext(DA)
+        history('/singIn');
     };
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -127,6 +135,9 @@ export default function MenuLateral({ children, props, window }) {
                                     {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                                 </IconButton>
                             </Button>
+                        </Grid>
+                        <Grid>
+                            <Button onClick={handleLogin}>login</Button>
                         </Grid>
                         <Box component="nav">
                             <Drawer

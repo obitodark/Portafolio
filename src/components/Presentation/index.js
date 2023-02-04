@@ -1,7 +1,8 @@
 import { styled, useTheme } from '@mui/material/styles';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import { Container, Grid, Typography, Button, Box, Divider } from '@mui/material';
 import StylesComponents from './stylesWelcome';
-
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import './css.css';
 import ProflePicture from '../ProfilePicture';
 const Presentation = () => {
@@ -11,6 +12,12 @@ const Presentation = () => {
     //     duration: 800,
     //     translateX: 250
     // });
+    const handleOpenWhatsApp = () => {
+        return window.open(' https://wa.me/51977980622?text=Hola,%20quiero%20contactar%20contigo', '_blank');
+    };
+    const handleOpenGithub = () => {
+        return window.open('https://github.com/obitodark?tab=repositories', '_blank');
+    };
 
     const stylesText = {
         color: theme.palette.mode === 'dark' ? '#E7FE55' : '#005FF0'
@@ -20,6 +27,18 @@ const Presentation = () => {
             <Grid container mt={5} justifyContent="center" position={'relative'}>
                 <Grid item container xs={12} sm={12} lg={6}>
                     <Grid item container xs={12} flexDirection="row" className="container" justifyContent="center">
+                        <Grid item sx={{ display: 'flex', flexDirection: 'column' }} pt={5}>
+                            <Button size="small" onClick={handleOpenWhatsApp}>
+                                <WhatsAppIcon fontSize="large" />
+                                <Divider orientation="vertical" variant="middle" sx={{ padding: '4px' }} />
+                            </Button>
+
+                            <Button size="small" onClick={handleOpenGithub}>
+                                <GitHubIcon fontSize="large" p={5} />
+                                <Divider orientation="vertical" variant="middle" sx={{ padding: '4px' }} />
+                            </Button>
+                        </Grid>
+
                         <Grid item>
                             <Typography
                                 variant="h1"
@@ -41,9 +60,10 @@ const Presentation = () => {
 
                             <Grid item mt={5}>
                                 <Button
-                                    variant="contained"
-                                    size="large"
-                                    sx={{ borderRadius: '10px', textTransform: 'capitalize', padding: '10px 20px' }}
+                                    variant="dashed"
+                                    // variant="contained"
+                                    // size="large"
+                                    // sx={{ borderRadius: '10px', textTransform: 'capitalize', padding: '10px 20px' }}
                                 >
                                     Learn more
                                 </Button>

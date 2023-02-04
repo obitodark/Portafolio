@@ -1,8 +1,11 @@
-import { Grid, Typography, Container, Box } from '@mui/material';
-import user from '../../Images/user.png';
-import Spline from '@splinetool/react-spline';
+import { Grid, Typography, Container, Box, Button } from '@mui/material';
+
+import user from '../../Images/avatar.png';
+import { styled, useTheme } from '@mui/material/styles';
+// import Spline from '@splinetool/react-spline';
 import './css.css';
 const About = () => {
+    const theme = useTheme();
     const box = {
         width: '400px',
         height: '400px',
@@ -14,8 +17,24 @@ const About = () => {
             transition: 'all .2s ease-in'
         }
     };
+    const StyleBoxDecorative = {
+        // boxShadow: theme.palette.mode !== 'dark' ? ' 3px 2px 5px  red' : '2px solid white',
+        background: theme.palette.mode !== 'dark' ? ' #00e5ac' : '#DEF067',
+        ':before': {
+            background: theme.palette.mode !== 'dark' ? ' #00e5ac' : '#DEF067'
+        },
+        ':after': {
+            background: theme.palette.mode !== 'dark' ? ' #00e5ac' : '#DEF067'
+        }
+    };
+    const StyleBoxDecorative2 = {
+        background: theme.palette.mode !== 'dark' ? ' #00e5ac' : '#DEF067',
+        ':before': {
+            background: theme.palette.mode !== 'dark' ? ' #00e5ac' : '#DEF067'
+        }
+    };
     return (
-        <div>
+        <>
             <Container maxWidth="lg">
                 <Grid container mt={10} p={2}>
                     <Grid item xs={12}>
@@ -40,14 +59,48 @@ const About = () => {
                         </Typography>
                     </Grid>
                     <Grid item container xs={12} sm={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Grid item /*sx={{ background: '#005FF0', borderRadius: '23% 77% 61% 39% / 69% 42% 58% 31% ' }}*/ p={3}>
-                            {/* <img width={350} src={user} alt="" /> */}
-                        </Grid>
+                        <Box
+                            position={'relative'}
+                            sx={{
+                                // border: '1px solid red',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignContent: 'center',
+                                width: '380px',
+                                height: '290px',
+                                overflow: 'hidden'
+                            }}
+                        >
+                            <div className="box-container-img">
+                                <img width="100%" height="auto" src={user} alt="" />
+                            </div>
+                            <Box className="box-decorate" sx={{ ...StyleBoxDecorative }}></Box>
+                            <Box className="box-decorate2" sx={{ ...StyleBoxDecorative2 }}></Box>
+                        </Box>
+                        {/* <Grid
+                            item
+                            className="back-user"
+                            sx={{
+                                backdropFilter: 'blur(50px)',
+                                background: 'transparent',
+                                borderRadius: '10px ',
+                                height: '350px',
+                                width: '300px',
+                                display: 'flex',
+                                position: 'relative',
+                                border: '1px solid black'
+
+                                // boxShadow: '5px 5px 5px red'
+                            }}
+                            p={3}
+                        >
+                            <img width="100%" height="100%" src={user} alt="" />
+                        </Grid> */}
                     </Grid>
-                    <Spline scene="https://prod.spline.design/isi0uXRsKYhbiiS5/scene.splinecode" />
+                    {/* <Spline scene="https://prod.spline.design/isi0uXRsKYhbiiS5/scene.splinecode" /> */}
                 </Grid>
             </Container>
-        </div>
+        </>
     );
 };
 

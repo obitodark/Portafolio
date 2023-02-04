@@ -6,6 +6,9 @@ import { textTransform } from '@mui/system';
 
 // const {colorMode}=useContext(ColorModeContextProvider)
 
+export const disabledStyle = {
+    '&.Mui-disabled': {}
+};
 const getDesignTokens = (mode) => ({
     palette: {
         mode,
@@ -28,13 +31,31 @@ const getDesignTokens = (mode) => ({
                   components: {
                       //   Name of the component
                       MuiButton: {
-                          styleOverrides: {
-                              root: {
-                                  fontWeight: 900,
-                                  borderRadius: '12px'
+                          //   styleOverrides: {
+                          //       root: {
+                          //           fontWeight: 900,
+                          //           borderRadius: '50px'
+                          //       },
+                          //     //   contained: {
+                          //     //       backgroundColor: 'red !important'
+                          //     //   }
+                          //   },
+                          variants: [
+                              {
+                                  props: { variant: 'dashed' },
+                                  style: {
+                                      textTransform: 'none',
+                                      border: `2px dashed red`,
+                                      backgroundColor: 'red !important'
+                                  }
                               },
-                              colorPrimary: '#F8CB14'
-                          }
+                              {
+                                  props: { variant: 'dashed', color: 'secondary' },
+                                  style: {
+                                      border: `4px dashed red`
+                                  }
+                              }
+                          ]
                       }
                       //   MuiAppBar: {
                       //       styleOverrides: {

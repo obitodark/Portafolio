@@ -4,22 +4,26 @@
     cursor: pointer;
     position: relative;
     transition: all 0.5s ease-in-out;
-
+    border-radius: 10px;
     box-shadow: none;
 }
 .box-item::before {
     content: '';
     position: absolute;
-    top: -1%;
-    left: -1%;
+    top: 50%;
+    left: 50%;
     width: 102%;
     height: 102%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
     background: linear-gradient(to right, #e7fe55, #005ff0);
     z-index: -1;
+    overflow: hidden;
 }
 .box-item:hover {
     overflow: visible;
     transition: all 0.5s ease-in-out;
     border: none;
+}
+.card-projects :hover ~ img {
 }

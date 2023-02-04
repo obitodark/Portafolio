@@ -3,7 +3,7 @@ import image2 from '../../Images/rickmorty.jpg';
 import image3 from '../../Images/challange01.jpg';
 import image4 from '../../Images/game01.jpg';
 import image5 from '../../Images/challamge02.jpg';
-
+import image6 from '../../Images/red_social.jpg';
 const projects = [
     {
         name: 'Tienda Bravaso',
@@ -37,7 +37,7 @@ const projects = [
     },
     {
         name: 'Tienda Bravaso',
-        image: image2,
+        image: image6,
         description: 'filtrado de pesrnajes y episodio de serie rick y morty',
 
         skill: [],

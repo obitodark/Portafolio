@@ -1,0 +1,15 @@
+.point-degraded_superior {
+    position: absolute;
+    z-index: 1;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e4f82b;
+    top: 60%;
+    right: 35%;
+    /* box-shadow: 0 0 0 10px #2b91f844, 0 0 200px #2b91f8, 0 0 300px #2b91f8, 0 0 300px #86b7e7; */
+    box-shadow: -750px -450px 50px #da235a, -380px -180px 50px 5px#1b6bd3, 100px -300px 100px 30px #00c198, -50px 300px 250px #e3e64c;
+    /* animation: morph 5s ease-in-out infinite both alternate; */
+    filter: blur(40px);
+}

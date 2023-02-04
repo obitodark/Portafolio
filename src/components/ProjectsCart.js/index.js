@@ -1,13 +1,15 @@
-import { Card, CardMedia, Typography, CardContent, CardActions, Button, useTheme, Divider } from '@mui/material';
+import { Card, CardMedia, Typography, CardContent, Box, CardActions, Button, useTheme, Divider } from '@mui/material';
 import './stylesCart.css';
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 const ProjectsCart = ({ project }) => {
     const theme = useTheme();
     const styles_card = {
-        border: theme.palette.mode === 'dark' ? 'none' : '1px solid rgb(214, 214, 214)',
+        overflow: 'hidden',
+        border: theme.palette.mode === 'dark' ? '#424242' : '1px solid rgb(214, 214, 214)',
         boxShadow: 'none',
         ':before': {
+            borderRadius: '10px',
             boxShadow:
                 theme.palette.mode === 'dark'
                     ? '8px 8px 10px #08111C , -8px -8px 8px #08111C '
@@ -20,12 +22,46 @@ const ProjectsCart = ({ project }) => {
     };
     return (
         <div>
-            <Card sx={{ ...styles_card, maxWidth: 345, borderRadius: '20px' }} className="box-item">
-                <CardMedia component="img" height="140" image={project.image} alt="green iguana" sx={{ borderRadius: '20px' }} />
+            <Card sx={{ ...styles_card, display: 'flex', justifyContent: 'space-between', borderRadius: '10px' }} className="box-item">
+                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Typography gutterBottom variant="subtitle" component="div" sx={{ fontWeight: 500 }}>
+                            {project.name}
+                        </Typography>
+                        <Typography variant="subtitle1" color="text.secondary" component="div">
+                            {project.description}
+                        </Typography>
+                    </CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
+                    <CardActions>
+                        <Button size="small" onClick={() => handleView(project.url_projects)}>
+                            <LinkIcon />
+                        </Button>
+                        <Button size="small" onClick={() => handleView(project.url_github)}>
+                            <GitHubIcon />
+                        </Button>
+                    </CardActions>
+                </Box>
+                <CardMedia
+                    component="img"
+                    sx={{ width: 151, borderRadius: '10px', overflow: 'hidden' }}
+                    image={project.images_projects[0].images !== undefined ? project.images_projects[0].images.url_image : ''}
+                    alt="Live from space album cover"
+                />
+            </Card>
+            {/* <Card sx={{ ...styles_card, maxWidth: 345, borderRadius: '10px' }} className="box-item">
+                <CardMedia
+                    className="card-projects"
+                    component="img"
+                    height="140"
+                    image={project.images_projects[0].images !== undefined ? project.images_projects[0].images.url_image : ''}
+                    alt="image-project"
+                    sx={{ borderRadius: '10px' }}
+                />
 
-                <CardContent sx={{ borderRadius: '20px' }}>
+                <CardContent sx={{ borderRadius: '10px' }}>
                     <Divider sx={{ background: 'black' }} mt={1} />
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="subtitle" component="div" sx={{ fontWeight: 500 }}>
                         {project.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" csx={{ borderRadius: '9px' }}>
@@ -33,14 +69,14 @@ const ProjectsCart = ({ project }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" onClick={() => handleView(project.link)}>
+                    <Button size="small" onClick={() => handleView(project.url_projects)}>
                         <LinkIcon />
                     </Button>
-                    <Button size="small" onClick={() => handleView(project.link)}>
+                    <Button size="small" onClick={() => handleView(project.url_github)}>
                         <GitHubIcon />
                     </Button>
                 </CardActions>
-            </Card>
+            </Card> */}
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
 import user from '../../Images/avatar.png';
-import './profile.css';
 
 const ProflePicture = () => {
     const theme = useTheme();
@@ -49,7 +48,7 @@ const ProflePicture = () => {
                     sx={{ ...stylesshape, background: `${theme.palette.mode === 'dark' ? '#E7FE55' : '#00EDB2'}` }}
                 ></Grid>
                 <Box sx={{ position: 'absolute', width: { xs: '250px', sm: '350px', zIndex: 5 } }}>
-                    <img width={'100%'} src={user} alt="" />
+                    <img draggable="false" width={'100%'} src={user} alt="" />
                 </Box>
             </Grid>
         </Grid>
