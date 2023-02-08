@@ -15,8 +15,8 @@ export const DataProviderProjects = ({ children }) => {
     const [isOpenModalProjects, openModalProjects, closeModalProjects] = useModal();
     const [isBackDrop, openBackDrop, closeBackDrop] = useAction();
     const [dataProjectsByPage, setProjectsByPage] = useData(getProjects);
-   
-   
+    const [isOpenModalDetailProject, openModalDetailProject, closeModalDetailProject] = useModal();
+
     const createProject = async (images, dataProjects) => {
         openBackDrop();
         const response = await createProjects(dataProjects);
@@ -72,7 +72,10 @@ export const DataProviderProjects = ({ children }) => {
                 isBackDrop,
                 updateProject,
                 dataProjectsByPage,
-                setProjectsByPage
+                setProjectsByPage,
+                isOpenModalDetailProject,
+                openModalDetailProject,
+                closeModalDetailProject
             }}
         >
             {children}

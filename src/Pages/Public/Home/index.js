@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid } from '@mui/material';
-import { ViewPresentation, ViewProjects, ViewAbout, ViewSkill, ViewContact } from '../../../components';
+import { ViewPresentation, ViewProjects, ViewAbout, ViewSkill, ViewContact, ViewDetailProject } from '../../../components';
+import { ViewModal } from '../../../components/common';
+import { ContextProjects } from '../../../context/contextProjects';
 
 function Home() {
+    const { dataProject, isOpenModalDetailProject, closeModalDetailProject } = useContext(ContextProjects);
     return (
-        <div>
-            {/* <ViewContainerModal container={<ViewLogin />} title={'Elogin'} /> */}
+        <>
+            <ViewModal open={isOpenModalDetailProject} isClose={closeModalDetailProject} title={''}>
+                <ViewDetailProject dataProject={dataProject} />
+            </ViewModal>
             <Grid container maxWidth={'100%'} sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Grid item xs={12} mb={12} id="Home">
                     <ViewPresentation />
@@ -28,7 +33,7 @@ function Home() {
                     <ViewContact />
                 </Grid>
             </Grid>
-        </div>
+        </>
     );
 }
 export default Home;

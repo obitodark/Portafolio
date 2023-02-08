@@ -35,7 +35,7 @@ const About = () => {
     };
     return (
         <>
-            <Container maxWidth="lg">
+            <Container>
                 <Grid container mt={10} p={2}>
                     <Grid item xs={12}>
                         {' '}
@@ -48,14 +48,15 @@ const About = () => {
                             Willians Ccallo
                         </Typography>
                         <Typography variant="body1" display={'block'} sx={{ wordWrap: 'break-word' }}>
-                            Soy engrasado de Tecnico Computacion e Informatica y certicado en desarrollo web full stack en TECSUP ,cuento
-                            con conocimietos solidos en Html,Css,Javascript,React,Bootstrap,Material UI
+                            Soy engresado de la Carrera Computacion e Informatica del Instituto Honorio Delgado Espinoza y certicado en
+                            desarrollo web full stack en TECSUP y Codigo ,cuento con conocimietos solidos en desarrollo web
                         </Typography>
                         <br />
                         <Typography variant="body1" display={'block'}>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus reiciendis vel labore quo rem nam beatae
-                            consequatur, omnis obcaecati, totam atque fugiat? Hic provident aliquam veritatis incidunt inventore, eligendi
-                            nemo.
+                            Soy una persona proactiva,responsable,y con buen desarrollo interpersonal,apasionado al programacion.Busco
+                            oportunidad de un puesto de trabajo donde pueda profundizar y mejorar mis conocimientos ,y logre adquirir
+                            experiencia donde consiga apreder a resolver problemas de nuevos desafios y sea capaz mejorar mi habilidades en
+                            el campo frontend y backend
                         </Typography>
                     </Grid>
                     <Grid item container xs={12} sm={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>

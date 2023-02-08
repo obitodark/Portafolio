@@ -55,17 +55,17 @@ const Presentation = () => {
                             </Typography>
 
                             <StylesComponents.textEffectWrite size={25} weight={600}>
-                                Programador Full Stack
+                                Programador Developer
                             </StylesComponents.textEffectWrite>
 
                             <Grid item mt={5}>
                                 <Button
-                                    variant="dashed"
-                                    // variant="contained"
+                                    // variant="dashed"
+                                    variant="contained"
                                     // size="large"
                                     // sx={{ borderRadius: '10px', textTransform: 'capitalize', padding: '10px 20px' }}
                                 >
-                                    Learn more
+                                    Saber mas
                                 </Button>
                             </Grid>
                         </Grid>

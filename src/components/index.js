@@ -15,3 +15,4 @@ export { default as ViewTableSkills } from './TableSkills';
 export { default as ViewTableCategories } from './TableCategories';
 export { default as ViewSkillsForm } from './SkillsForm';
 export { default as ViewCategoriesForm } from './CategoriesForm';
+export { default as ViewDetailProject } from './DetailProject';

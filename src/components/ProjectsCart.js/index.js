@@ -2,7 +2,11 @@ import { Card, CardMedia, Typography, CardContent, Box, CardActions, Button, use
 import './stylesCart.css';
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { useContext } from 'react';
+import { ContextProjects } from '../../context/contextProjects';
+
 const ProjectsCart = ({ project }) => {
+    const { openModalDetailProject, setProject } = useContext(ContextProjects);
     const theme = useTheme();
     const styles_card = {
         overflow: 'hidden',
@@ -12,18 +16,22 @@ const ProjectsCart = ({ project }) => {
             borderRadius: '10px',
             boxShadow:
                 theme.palette.mode === 'dark'
-                    ? '8px 8px 10px #08111C , -8px -8px 8px #08111C '
+                    ? '8px 8px 10px black , -8px -8px 8px ##222222  '
                     : '8px 8px 10px rgb(212, 204, 204), -8px -8px 8px rgb(212, 204, 204)'
         }
     };
 
+    const handleOpenModal = () => {
+        setProject(project._id);
+        openModalDetailProject();
+    };
     const handleView = (url) => {
         window.open(url, '_blank');
     };
     return (
         <div>
             <Card sx={{ ...styles_card, display: 'flex', justifyContent: 'space-between', borderRadius: '10px' }} className="box-item">
-                <Grid container sx={{ height: '200px' }}>
+                <Grid container sx={{ height: '200px', overflow: 'hidden' }} onClick={handleOpenModal}>
                     <Grid item xs={6}>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: '1 0 auto' }}>

@@ -1,8 +1,10 @@
 import { Container, Grid, Typography, Button, Divider, Pagination, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { useState } from 'react';
 import { useContext } from 'react';
+
 import { ContextCategories } from '../../context/ContextCategories.js';
 import { ContextProjects } from '../../context/contextProjects.js';
+import ModalContainer from '../common/ModalContainer/index.js';
 
 import ProjectsCart from '../ProjectsCart.js';
 
@@ -19,6 +21,7 @@ const Projects = () => {
     };
     return (
         <Container maxWidth="xl">
+            <ModalContainer></ModalContainer>
             <Grid container spacing={3} mt={5}>
                 <Grid item xs={12}>
                     <Typography variant="h4">Proyectos Realizados</Typography>
@@ -59,7 +62,7 @@ const Projects = () => {
                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'end' }}>
                     <Pagination count={dataProjectsByPage.totalPages} onChange={handleOnChangePage} variant="outlined" shape="rounded" />
                 </Grid>
-                <Grid item xs={12} container spacing={1.5} justifyContent="center">
+                <Grid item xs={12} container spacing={2} justifyContent="center">
                     {dataProjectsByPage.items !== undefined && dataProjectsByPage.items.length > 0
                         ? dataProjectsByPage.items.map((project, index) => (
                               <Grid key={index} item xs={12} sm={6} md={4} lg={3} xl={3}>
