@@ -23,7 +23,7 @@ const ContainerModal = ({ container, title }) => {
         setOpenModal(false);
     };
     return (
-        <Modal hideBackdrop open={openModal}>
+        <Modal hideBackdrop open={openModal} sx={{ borderRadius: '10px' }}>
             <Box sx={{ ...style }}>
                 <Grid container position={'relative'}>
                     <Grid xs={12} mb={2}>
