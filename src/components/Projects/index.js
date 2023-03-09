@@ -66,7 +66,7 @@ const Projects = () => {
                     {dataProjectsByPage.items !== undefined && dataProjectsByPage.items.length > 0
                         ? dataProjectsByPage.items.map((project, index) => (
                               <Grid key={index} item xs={12} sm={6} md={4} lg={3} xl={3}>
-                                  <ProjectsCart key={index} project={project} />
+                                  <ProjectsCart project={project} />
                               </Grid>
                           ))
                         : ''}

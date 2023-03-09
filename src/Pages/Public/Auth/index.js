@@ -26,9 +26,11 @@ const Auth = () => {
                 sx={{
                     zIndex: 5,
                     borderRadius: 2,
-                    width: '500px',
-                    height: '400px',
+                    // width: '500px',
+                    // height: '400px',
 
+                    width: { xs: '100%', sm: '500px' },
+                    height: { xs: '100%', sm: '400px' },
                     border: `1px solid ${theme.palette.mode === 'dark' ? 'tranparent' : '#B0B3B8'}`,
                     background: `${theme.palette.mode === 'dark' ? 'rgba(15,15,15,0.5)' : 'rgba(255, 255, 255,0.6)'}`,
                     backdropFilter: 'blur(50px)'

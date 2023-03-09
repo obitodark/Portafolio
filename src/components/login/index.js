@@ -1,4 +1,4 @@
-import { Box, CardActions, Typography, CardContent, Button, TextField } from '@mui/material';
+import { Box, CardActions, Typography, CardContent, Button, TextField, Grid } from '@mui/material';
 import { useState } from 'react';
 
 import { singIn } from '../../services/auth.services';
@@ -33,13 +33,15 @@ const Login = () => {
         // console.log('token', data);
     };
     return (
-        <Box>
-            <CardContent>
-                <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                    Login
-                </Typography>
-                <Box p={3}>
-                    <Box mb={2}>
+        <>
+            <Box>
+                <Grid item container xs={12} p={2} spacing={2}>
+                    <Grid item>
+                        <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                            Login
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} mb={2}>
                         <TextField
                             name="username"
                             id="outlined-basic"
@@ -48,8 +50,8 @@ const Login = () => {
                             variant="outlined"
                             onChange={handelInputChange}
                         />
-                    </Box>
-                    <Box>
+                    </Grid>
+                    <Grid item xs={12}>
                         <TextField
                             name="password"
                             fullWidth
@@ -58,15 +60,15 @@ const Login = () => {
                             autoComplete="current-password"
                             onChange={handelInputChange}
                         />
-                    </Box>
-                </Box>
-            </CardContent>
-            <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Button variant="contained" onClick={handleSend}>
-                    Ingresar
-                </Button>
-            </CardActions>
-        </Box>
+                    </Grid>
+                    <Grid item xs={12} mt={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <Button variant="contained" onClick={handleSend}>
+                            Ingresar
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Box>
+        </>
     );
 };
 export default Login;
