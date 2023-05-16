@@ -39,6 +39,9 @@ const Skill = () => {
                                         p={2}
                                         xs={12}
                                         sm={5}
+                                        md={3}
+                                        lg={2.4}
+                                        xl={2}
                                         display="flex"
                                         sx={{
                                             background: `${theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)'}`,
@@ -55,16 +58,16 @@ const Skill = () => {
                                         }}
                                     >
                                         {/* <div className="point-degraded"></div> */}
-                                        <Grid item container xs={5}>
-                                            <Grid item xs={4}>
+                                        {/* <Grid item container xs={5}> */}
+                                            <Grid item > 
                                                 <Avatar
                                                     alt="Remy Sharp"
                                                     src={data.url_image}
                                                     sx={{ width: { xs: '30px', sm: '50px' }, height: { xs: '30px', sm: '50px' } }}
                                                     variant="rounded"
                                                 />
-                                            </Grid>
-                                            <Grid item xs={8}>
+                                             </Grid> 
+                                            <Grid item >
                                                 <Typography
                                                     variant="body1"
                                                     color={`${theme.palette.mode === 'dark' ? 'white' : 'black'}`}
@@ -77,32 +80,8 @@ const Skill = () => {
                                                     {data.description}
                                                 </Typography>
                                             </Grid>
-                                        </Grid>
-                                        <Grid item xs={12} sm={12} lg={5}>
-                                            <Slider
-                                                aria-label="Volume"
-                                                // defaultValue={30}
-                                                value={data.value}
-                                                size="small"
-                                                sx={{
-                                                    color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
-                                                    '& .MuiSlider-track': {
-                                                        border: 'none'
-                                                    },
-                                                    '& .MuiSlider-thumb': {
-                                                        width: 24,
-                                                        height: 24,
-                                                        backgroundColor: '#fff',
-                                                        '&:before': {
-                                                            boxShadow: '0 4px 8px rgba(0,0,0,0.4)'
-                                                        },
-                                                        '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                                                            boxShadow: 'none'
-                                                        }
-                                                    }
-                                                }}
-                                            />
-                                        </Grid>
+                                        {/* </Grid> */}
+                                        
                                     </Grid>
                                 ))}
                         </Grid>
