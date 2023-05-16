@@ -57,8 +57,7 @@ const Skill = () => {
                                             }
                                         }}
                                     >
-                                        {/* <div className="point-degraded"></div> */}
-                                        {/* <Grid item container xs={5}> */}
+                                       
                                             <Grid item > 
                                                 <Avatar
                                                     alt="Remy Sharp"
@@ -80,8 +79,7 @@ const Skill = () => {
                                                     {data.description}
                                                 </Typography>
                                             </Grid>
-                                        {/* </Grid> */}
-                                        
+                                    
                                     </Grid>
                                 ))}
                         </Grid>
